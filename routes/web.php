@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JobController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,22 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/jobs', function() {
-    $title = 'Available Jobs';
-    $jobs = [
-        'web developer',
-        'db admin', 'software engineer'
-    ];
-
-    return view('jobs.index', compact('title', 'jobs'));
-})->name('jobs');
-
-Route::get('/jobs/create', function() {
-    return view('jobs.create');
-})->name('jobs.create');
+Route::resource('jobs', JobController::class);
 
 
