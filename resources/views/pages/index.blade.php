@@ -8,15 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-<h1>{{ $title }}</h1>
-<ul>
-    @forelse($jobs as $job)
-        <li>
-            {{$job}}
-        </li>
-    @empty
-        <p>No jobs available</p>
-    @endforelse
-</ul>
+<h1>Welcome to Workopia</h1>
 </body>
 </html>
