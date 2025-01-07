@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Models\Job;
+use Illuminate\Support\Facades\DB;
+
 class JobController extends Controller
 {
     /**
@@ -12,11 +14,7 @@ class JobController extends Controller
      */
     public function index()
     {
-        $jobs = [
-            'Web Developer',
-            'Mobile Developer',
-            'Desktop Developer'
-        ];
+        $jobs = Job::all();
 
         return view('jobs.index', compact('jobs'));
     }
