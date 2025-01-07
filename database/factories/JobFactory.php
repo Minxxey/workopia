@@ -30,7 +30,7 @@ class JobFactory extends Factory
                 'address' => $this->faker->streetAddress(),
                 'city' => $this->faker->city(),
                 'state' => $this->faker->state(),
-                'zip_code' => $this->faker->postcode(),
+                'zipcode' => $this->faker->postcode(),
                 'contact_email' => $this->faker->safeEmail(),
                 'contact_phone' => $this->faker->phoneNumber(),
                 'company_name' => $this->faker->company(),
