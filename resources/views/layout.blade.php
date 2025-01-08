@@ -18,7 +18,7 @@
     <x-hero/>
     <x-top-banner />
 @endif
-<main class="container block mx-auto-p px-4 py-4">
+<main class="container block mx-auto px-4 py-4">
     {{$slot}}
 </main>
 <script src="{{asset('js/script.js')}}"></script>
