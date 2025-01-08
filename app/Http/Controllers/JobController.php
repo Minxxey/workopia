@@ -50,7 +50,7 @@ class JobController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('jobs.show', ['job' => Job::find($id)]);
     }
 
     /**
