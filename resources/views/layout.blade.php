@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
           integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="//unpkg.com/alpinejs" defer></script>
     @vite('resources/css/app.css')
     <title>{{$title ?? 'Welcome to Workopia!'}}</title>
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
@@ -18,7 +19,13 @@
     <x-hero/>
     <x-top-banner />
 @endif
-<main class="container block mx-auto-p px-4 py-4">
+<main class="container block mx-auto px-4 py-4">
+    @if(session('success'))
+        <x-alert type="success" message="{{session('success')}}"/>
+    @endif
+        @if(session('error'))
+            <x-alert type="error" message="{{session('error')}}"/>
+        @endif
     {{$slot}}
 </main>
 <script src="{{asset('js/script.js')}}"></script>

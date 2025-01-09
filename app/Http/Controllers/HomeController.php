@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Job;
+
 class HomeController extends Controller
 {
     public function index() {
-        return view('pages.index');
+
+        $latestJobs = Job::latest()->limit(6)->get();
+
+        return view('pages.index')->with('latestJobs', $latestJobs);
     }
 }
